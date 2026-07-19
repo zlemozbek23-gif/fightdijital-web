@@ -1,40 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Intersection Observer for scroll animations
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15
-  };
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  // ── Scroll Animations ──────────────────────────────────────────────────────
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+        obs.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { root: null, rootMargin: '0px', threshold: 0.12 });
 
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    observer.observe(el);
-  });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-  // Mobile Menu Toggle (Basic implementation)
-  // In a real app, you'd add a hamburger menu and handle its state here.
-  
-  // Optional: Add smooth scrolling for anchor links if needed
+  // ── Mobile Hamburger Menu ──────────────────────────────────────────────────
+  const toggle   = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      toggle.textContent = isOpen ? '✕' : '☰';
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Menüdeki linklere tıklayınca menü kapansın
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.textContent = '☰';
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+  }
+
+  // ── Smooth Scroll ──────────────────────────────────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
       const targetId = this.getAttribute('href');
-      if(targetId !== '#') {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
+
 });
