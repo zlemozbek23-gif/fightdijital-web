@@ -503,6 +503,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 10px 0;
   position: relative;
   z-index: 99;
+  margin-top: 72px; /* fixed nav height compensation */
 }
 .ticker-wrap::before,
 .ticker-wrap::after {
@@ -556,6 +557,7 @@ img { max-width: 100%; height: auto; display: block; }
   overflow: hidden;
   padding: var(--space-lg) 0;
   position: relative;
+  display: flex; /* side-by-side tracks for seamless loop */
 }
 .roadmap-marquee-wrap::before,
 .roadmap-marquee-wrap::after {
