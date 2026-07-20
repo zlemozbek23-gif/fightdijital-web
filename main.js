@@ -12,6 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
+  // ── Infinite Marquee ───────────────────────────────────────────────────────
+  const track = document.getElementById('testimonial-track');
+  if (track) {
+    // Clone all slides and append them to the track for seamless looping
+    const slides = Array.from(track.children);
+    slides.forEach(slide => {
+      const clone = slide.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true'); // Accessibility: hide clones from screen readers
+      track.appendChild(clone);
+    });
+  }
+
   // ── Web3Forms Submit ───────────────────────────────────────────────────────
   const form       = document.getElementById('contact-form');
   const submitBtn  = document.getElementById('submit-btn');

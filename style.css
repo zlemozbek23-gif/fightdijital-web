@@ -245,6 +245,136 @@ img { max-width: 100%; height: auto; display: block; }
 .card:hover::before { transform: scaleX(1); }
 
 /* ==========================================================================
+   COMPONENTS — TESTIMONIALS (AUTO MARQUEE)
+   ========================================================================== */
+.testimonial-slider {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  position: relative;
+  padding: var(--space-md) 0;
+  display: flex;
+}
+
+/* Gradient masks for smooth fading on edges */
+.testimonial-slider::before,
+.testimonial-slider::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 15vw;
+  z-index: 2;
+  pointer-events: none;
+}
+.testimonial-slider::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-surface) 0%, transparent 100%);
+}
+.testimonial-slider::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-surface) 0%, transparent 100%);
+}
+
+.testimonial-track {
+  display: flex;
+  gap: var(--space-lg);
+  padding: 0 var(--space-md);
+  /* "sağa doğru aksın" => moving from -50% to 0 */
+  animation: marqueeRight 45s linear infinite;
+  width: max-content;
+}
+
+.testimonial-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0%); }
+}
+
+.testimonial-slide {
+  flex-shrink: 0;
+}
+
+/* Yumuşak yuvarlak köşeli kutucuklar */
+.testimonial-card {
+  width: 380px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px; /* soft rounded */
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  transition: transform .3s ease, background .3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.05);
+}
+
+.testimonial-before-after {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.testimonial-before p,
+.testimonial-after p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.testimonial-before p { color: #a3a3a3; font-style: italic; }
+.testimonial-after p { color: #fff; font-weight: 500; }
+
+.ba-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+.ba-label:not(.after) { background: rgba(255,255,255,0.1); color: #ccc; }
+.ba-label.after { background: rgba(16,185,129,0.15); color: #10b981; }
+
+.testimonial-arrow {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  align-self: center;
+  transform: rotate(90deg);
+  margin: -8px 0;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.testimonial-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.testimonial-name { font-weight: 600; color: #fff; font-size: 1.05rem; }
+.testimonial-gym { font-size: 0.8rem; color: #a3a3a3; }
+.testimonial-stars { color: #f59e0b; font-size: 0.9rem; margin-top: 2px; }
+
+/* ==========================================================================
    MISC LEGACY HELPERS
    ========================================================================== */
 .logo-bar  { border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: var(--space-lg) 0; background: var(--color-surface); text-align: center; }
