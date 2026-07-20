@@ -12,6 +12,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
+  // ── Ticker: clone items for seamless loop ─────────────────────────────────
+  const tickerTrack = document.getElementById('ticker-track');
+  if (tickerTrack) {
+    const tickerClone = tickerTrack.cloneNode(true);
+    tickerClone.setAttribute('aria-hidden', 'true');
+    tickerTrack.parentElement.appendChild(tickerClone);
+  }
+
+  // ── Roadmap Marquee: clone for seamless loop ──────────────────────────────
+  const roadmapTrack = document.getElementById('roadmap-track');
+  if (roadmapTrack) {
+    const roadmapClone = roadmapTrack.cloneNode(true);
+    roadmapClone.setAttribute('aria-hidden', 'true');
+    roadmapTrack.parentElement.appendChild(roadmapClone);
+  }
+
+  // ── Counter Animation ──────────────────────────────────────────────────────
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const start = performance.now();
+
+      const tick = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Easing: ease-out
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        el.textContent = prefix + current + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.counter-val').forEach(el => counterObserver.observe(el));
+
   // ── Infinite Marquee ───────────────────────────────────────────────────────
   const track = document.getElementById('testimonial-track');
   if (track) {

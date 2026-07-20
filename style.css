@@ -493,6 +493,104 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ==========================================================================
+   COMPONENTS — TICKER BAND
+   ========================================================================== */
+.ticker-wrap {
+  width: 100%;
+  background: rgba(197, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(197, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 10px 0;
+  position: relative;
+  z-index: 99;
+}
+.ticker-wrap::before,
+.ticker-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.ticker-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg), transparent);
+}
+.ticker-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg), transparent);
+}
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  animation: tickerScroll 30s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-item {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.ticker-sep {
+  color: var(--color-primary);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   COMPONENTS — ROADMAP MARQUEE
+   ========================================================================== */
+.roadmap-marquee-wrap {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  padding: var(--space-lg) 0;
+  position: relative;
+}
+.roadmap-marquee-wrap::before,
+.roadmap-marquee-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.roadmap-marquee-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg), transparent);
+}
+.roadmap-marquee-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg), transparent);
+}
+.roadmap-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  width: max-content;
+  animation: marqueeRight 25s linear infinite;
+  padding: 0 var(--space-xl);
+}
+.roadmap-marquee-track:hover { animation-play-state: paused; }
+.roadmap-sep {
+  font-size: 2rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* ==========================================================================
    MISC LEGACY HELPERS
    ========================================================================== */
 .logo-bar  { border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: var(--space-lg) 0; background: var(--color-surface); text-align: center; }

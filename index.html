@@ -32,6 +32,24 @@
     </div>
   </nav>
 
+  <!-- Ticker Band -->
+  <div class="ticker-wrap">
+    <div class="ticker-track" id="ticker-track">
+      <span class="ticker-item">🥊 İstanbul'da salon sahipleri FightDijital ile büyüyor</span>
+      <span class="ticker-sep">✦</span>
+      <span class="ticker-item">💪 Ankara'da yeni kayıt rekoru kırıldı</span>
+      <span class="ticker-sep">✦</span>
+      <span class="ticker-item">🔥 İzmir'de rakipleri geride bırak</span>
+      <span class="ticker-sep">✦</span>
+      <span class="ticker-item">⚡ Türkiye'nin tek dövüş sporları odaklı dijital ajansı</span>
+      <span class="ticker-sep">✦</span>
+      <span class="ticker-item">🏆 İlk 48 saatte sonuç almaya başla</span>
+      <span class="ticker-sep">✦</span>
+      <span class="ticker-item">🎯 Bursa, Gaziantep, Antalya'da başarı hikayeleri devam ediyor</span>
+      <span class="ticker-sep">✦</span>
+    </div>
+  </div>
+
   <!-- Hero Section -->
   <section class="section-hero">
     <div class="hero-bg"></div>
@@ -51,11 +69,11 @@
         
         <div style="display: flex; gap: 48px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); max-width: 600px;">
           <div>
-            <div style="font-family: var(--font-display); font-size: 3rem; color: #fff; line-height: 1;">%100</div>
+            <div class="counter-val" data-target="100" data-prefix="%" style="font-family: var(--font-display); font-size: 3rem; color: #fff; line-height: 1;">%0</div>
             <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-secondary); text-transform: uppercase; margin-top: 8px;">Niş Odaklı Ajans</div>
           </div>
           <div>
-            <div style="font-family: var(--font-display); font-size: 3rem; color: var(--color-primary); line-height: 1;">3x</div>
+            <div class="counter-val" data-target="3" data-suffix="x" style="font-family: var(--font-display); font-size: 3rem; color: var(--color-primary); line-height: 1;">0x</div>
             <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-secondary); text-transform: uppercase; margin-top: 8px;">Daha Fazla Kayıt</div>
           </div>
         </div>
@@ -73,11 +91,11 @@
         </div>
         <div style="display:flex; align-items:center; gap:8px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; text-transform: uppercase;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
-          Google Ads Specialist
+          Google Ads SPECIALIST
         </div>
         <div style="display:flex; align-items:center; gap:8px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; text-transform: uppercase;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
-          TikTok Advertising
+          TikTok ADVERTISING
         </div>
       </div>
     </div>
@@ -180,7 +198,7 @@
         <!-- Card 3 -->
         <div class="card animate-on-scroll stagger-3">
           <div style="font-size: 2rem; color: var(--color-primary); margin-bottom: 16px;">03</div>
-          <h3 style="font-size: 1.5rem;">Lead Nurturing (Takip)</h3>
+          <h3 style="font-size: 1.5rem;">Lead NURTURING (Takip)</h3>
           <p>Sisteme düşen numaraların otomatik SMS ve e-posta akışlarıyla ısıtılması. Randevuya dönüşmeyen lead kalmayacak.</p>
         </div>
       </div>
@@ -195,23 +213,29 @@
         <h2 style="margin-bottom: var(--space-md);">SADECE 3 ADIMDA KESİNTİSİZ BÜYÜME.</h2>
         <p style="max-width: 700px; margin: 0 auto;">Karmaşık süreçler, anlaşılmaz raporlar yok. Sizin tek yapmanız gereken minderdeki antrenmana odaklanmak.</p>
       </div>
+    </div>
 
-      <div class="roadmap-grid">
-        <div class="roadmap-step animate-on-scroll stagger-1">
+    <!-- Roadmap Marquee -->
+    <div class="roadmap-marquee-wrap">
+      <div class="roadmap-marquee-track" id="roadmap-track">
+        <div class="roadmap-step">
           <div class="step-number">01</div>
           <h3>Hedef Kitle Analizi & Strateji</h3>
           <p>Bölgenizdeki rekabeti analiz ediyor, potansiyel dövüş sporları meraklılarını haritalandırıyoruz. Salonunuzun kapasitesine göre özel bir plan çıkarıyoruz.</p>
         </div>
-        <div class="roadmap-step animate-on-scroll stagger-2">
+        <div class="roadmap-sep">→</div>
+        <div class="roadmap-step">
           <div class="step-number">02</div>
           <h3>Agresif Reklam Çıkışı</h3>
           <p>Sadece sizin branşınıza özel, kışkırtıcı reklam kampanyaları (video ve görseller) tasarlıyor ve nokta atışı hedeflemeyle yayına alıyoruz.</p>
         </div>
-        <div class="roadmap-step animate-on-scroll stagger-3">
+        <div class="roadmap-sep">→</div>
+        <div class="roadmap-step">
           <div class="step-number">03</div>
           <h3>Kayıt & Ciro Artışı</h3>
           <p>Sistem oturduktan sonra her ay düzenli randevu talepleri almaya başlarsınız. Sizin işiniz gelen talepleri kaliteli bir derse dönüştürmektir.</p>
         </div>
+        <div class="roadmap-sep">→</div>
       </div>
     </div>
   </section>
@@ -495,7 +519,7 @@
 
             <!-- Başarı mesajı -->
             <div id="form-success" style="display:none; text-align:center; padding: 16px; background: rgba(16,185,129,0.1); border: 1px solid #10b981; border-radius: var(--radius-sm); color: #10b981; font-family: var(--font-display); letter-spacing: 0.05em;">
-              ✓ TALEBINIZ ALINDI! EN KISA SÜREDE DÖNÜŞ YAPACAĞIZ.
+              ✓ TALEBİNİZ ALINDI! EN KISA SÜREDE DÖNÜŞ YAPACAĞIZ.
             </div>
             <div id="form-error" style="display:none; text-align:center; padding: 16px; background: rgba(239,68,68,0.1); border: 1px solid #ef4444; border-radius: var(--radius-sm); color: #ef4444; font-family: var(--font-display); letter-spacing: 0.05em;">
               ✗ BİR HATA OLUŞTU. LÜTFEN TEKRAR DENEYİN.
@@ -522,7 +546,7 @@
           WHATSAPP
         </a>
       </div>
-      <p style="font-size: 0.9rem; color: var(--color-text-secondary);">© 2026 FightDijital. Tüm hakları saklıdır. Dövüş Kulüpleri İçin Dijital Büyüme Ajansı.</p>
+      <p style="font-size: 0.9rem; color: var(--color-text-secondary);">FightDijital © 2026 — Dövüş Kulüpleri İçin Dijital Büyüme Ajansı.</p>
     </div>
   </footer>
 
