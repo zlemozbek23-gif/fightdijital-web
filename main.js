@@ -24,6 +24,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── ROI Calculator ──────────────────────────────────────────────────────────
+  const membersInput = document.getElementById('newMembers');
+  const feeInput = document.getElementById('avgFee');
+  const membersValDisp = document.getElementById('membersVal');
+  const monthlyDisp = document.getElementById('monthlyRevenue');
+  const yearlyDisp = document.getElementById('yearlyRevenue');
+
+  function calculateROI() {
+    if (!membersInput || !feeInput || !monthlyDisp || !yearlyDisp) return;
+    
+    const members = parseInt(membersInput.value) || 0;
+    const fee = parseInt(feeInput.value) || 0;
+    
+    const monthly = members * fee;
+    const yearly = monthly * 12;
+
+    membersValDisp.textContent = members;
+    
+    // Format to Turkish Lira currency standard
+    monthlyDisp.textContent = new Intl.NumberFormat('tr-TR').format(monthly) + ' TL';
+    yearlyDisp.textContent = new Intl.NumberFormat('tr-TR').format(yearly) + ' TL';
+  }
+
+  if (membersInput && feeInput) {
+    membersInput.addEventListener('input', calculateROI);
+    feeInput.addEventListener('input', calculateROI);
+    calculateROI(); // Initial calc
+  }
+
   // ── Web3Forms Submit ───────────────────────────────────────────────────────
   const form       = document.getElementById('contact-form');
   const submitBtn  = document.getElementById('submit-btn');
