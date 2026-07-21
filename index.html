@@ -36,7 +36,10 @@
 
   <!-- Hero Section -->
   <section class="section-hero">
-    <div class="hero-bg"></div>
+    <video autoplay muted loop playsinline class="hero-video-bg" poster="hero.jpg">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-boxer-punching-a-punching-bag-4027-large.mp4" type="video/mp4">
+    </video>
+    <div class="hero-bg-overlay"></div>
     <div class="container">
       <div class="hero-content animate-on-scroll" style="margin-top: 5vh;">
         <div style="display: inline-block; padding: 6px 16px; border: 1px solid rgba(197, 0, 0, 0.4); border-radius: 50px; background: rgba(197, 0, 0, 0.1); margin-bottom: 24px; color: var(--color-primary); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">
@@ -101,6 +104,55 @@
           <p style="font-size: 1.125rem; color: #fff;">Sıradan reklam ajansları e-ticaret sitelerine veya restoranlara reklam çıkarır. Biz ise <strong>sadece dövüş sporları kulüpleriyle</strong> çalışıyoruz.</p>
           <p style="margin-top: var(--space-md);">Hedef kitlenizin zihniyetini, o mindere adım atmanın ne demek olduğunu biliyoruz. Amacımız "bedava deneme dersi" avcılarını değil, aidatını ödeyip ter dökecek gerçek savaşçıları salonunuza getirmektir.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table Section -->
+  <section class="section" style="background: var(--color-bg); border-top: 1px solid var(--color-border);">
+    <div class="container">
+      <div class="animate-on-scroll" style="text-align: center; margin-bottom: var(--space-4xl);">
+        <h2 style="margin-bottom: var(--space-md);">BİZ VS. SIRADAN AJANSLAR</h2>
+        <p style="max-width: 700px; margin: 0 auto;">Neden sadece dövüş sporlarına odaklanıyoruz? Çünkü bu sektör sıradan pazarlama taktiklerini affetmez.</p>
+      </div>
+      
+      <div class="animate-on-scroll" style="overflow-x: auto;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>ÖZELLİKLER</th>
+              <th>SIRADAN AJANSLAR</th>
+              <th class="col-us">FIGHTDIJITAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sektör Odağı</td>
+              <td>E-ticaret, Restoran, Emlak (Herkes)</td>
+              <td class="col-us"><strong>Sadece Dövüş Sporları Kulüpleri</strong></td>
+            </tr>
+            <tr>
+              <td>Hedef Kitle Psikolojisi</td>
+              <td><span class="icon-cross">✗</span> Yüzeysel hedefleme</td>
+              <td class="col-us"><span class="icon-check">✓</span> Minderin dilini ve disiplinini bilir</td>
+            </tr>
+            <tr>
+              <td>Vaat Edilen Sonuç</td>
+              <td>Boş "Beğeni" ve "Erişim" rakamları</td>
+              <td class="col-us"><strong>Minderde ter dökecek, aidat ödeyen üye</strong></td>
+            </tr>
+            <tr>
+              <td>Ölçülebilirlik</td>
+              <td>Karmaşık PDF raporları</td>
+              <td class="col-us"><span class="icon-check">✓</span> Şeffaf Kazanç / Ciro Tablosu (ROI)</td>
+            </tr>
+            <tr>
+              <td>Risk & Garanti</td>
+              <td><span class="icon-cross">✗</span> Para iade garantisi yoktur</td>
+              <td class="col-us"><strong>%100 PARA İADE GARANTİSİ</strong></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -504,6 +556,10 @@
         </div>
         <div class="card animate-on-scroll stagger-2" style="background: var(--color-bg);">
           <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="padding: 12px; background: rgba(197, 0, 0, 0.1); border-left: 4px solid var(--color-primary); color: #fff; font-size: 0.9rem;">
+              <strong>KONTENJAN UYARISI:</strong> Kaliteyi korumak adına her ay sistemimize <strong>sadece 3 yeni kulüp</strong> dahil ediyoruz. Bu ay için kalan boş kontenjan: <strong>1</strong>
+            </div>
+            
             <!-- Web3Forms Access Key -->
             <input type="hidden" name="access_key" value="4cdf03ae-2ca8-4315-b16e-3e6b8e7bf6ba">
             <input type="hidden" name="subject" value="FightDijital - Yeni Strateji Görüşmesi Talebi">
@@ -514,6 +570,12 @@
             <input type="text" name="name" placeholder="Ad Soyad" required style="width: 100%; padding: 14px; background: var(--color-surface); border: 1px solid var(--color-border); color: #fff; font-family: var(--font-body); border-radius: var(--radius-sm);">
             <input type="tel" name="phone" placeholder="Telefon Numarası" required style="width: 100%; padding: 14px; background: var(--color-surface); border: 1px solid var(--color-border); color: #fff; font-family: var(--font-body); border-radius: var(--radius-sm);">
             <input type="text" name="club" placeholder="Kulüp Adı" required style="width: 100%; padding: 14px; background: var(--color-surface); border: 1px solid var(--color-border); color: #fff; font-family: var(--font-body); border-radius: var(--radius-sm);">
+            
+            <label style="display: flex; gap: 8px; align-items: flex-start; cursor: pointer; font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 8px;">
+              <input type="checkbox" required style="margin-top: 4px; accent-color: var(--color-primary);">
+              <span>Kişisel verilerimin <a href="#" style="color: var(--color-primary); text-decoration: underline;">KVKK Aydınlatma Metni</a> kapsamında işlenmesini ve iletişim kurulmasını onaylıyorum.</span>
+            </label>
+
             <button type="submit" class="btn-primary" id="submit-btn" style="width: 100%;">SAVAŞ PLANINI AL</button>
 
             <!-- Başarı mesajı -->

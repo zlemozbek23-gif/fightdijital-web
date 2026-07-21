@@ -163,22 +163,29 @@ img { max-width: 100%; height: auto; display: block; }
 .mobile-menu-toggle:hover { border-color: var(--color-primary); color: var(--color-primary); }
 
 /* ==========================================================================
-   HERO
+   COMPONENTS — HERO
    ========================================================================== */
-.hero-bg {
-  position: absolute; inset: 0; z-index: -1;
-  background-image:
-    linear-gradient(to right, rgba(5,5,5,.95) 0%, rgba(5,5,5,.7) 50%, rgba(5,5,5,.95) 100%),
-    url('hero.jpg');
-  background-size: cover; background-position: center;
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
+.hero-bg-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.7) 100%);
+  z-index: -1;
+}
+.hero-content { position: relative; z-index: 1; }
 .hero-bg::after {
   content: '';
   position: absolute; inset: 0;
   background: radial-gradient(ellipse at center, transparent 0%, rgba(5,5,5,.8) 100%);
 }
-
-.hero-content { max-width: 800px; }
 
 .hero-subtitle {
   font-family: var(--font-mono);
@@ -451,46 +458,88 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ==========================================================================
-   COMPONENTS — FAQ (ACCORDION)
+   COMPONENTS — FAQ & TABLES
    ========================================================================== */
+.faq-container { margin-top: var(--space-2xl); }
 .faq-item {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  transition: border-color .3s;
+  transition: background .3s ease;
 }
-.faq-item[open] {
-  border-color: rgba(197,0,0,0.3);
-}
+.faq-item:hover { background: rgba(255,255,255,0.05); }
 .faq-item summary {
   padding: var(--space-lg);
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   cursor: pointer;
   list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
+  position: relative;
+  outline: none;
 }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item summary::after {
   content: '+';
-  color: var(--color-primary);
+  position: absolute;
+  right: var(--space-lg);
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 1.5rem;
-  transition: transform .3s;
+  color: var(--color-primary);
 }
-.faq-item[open] summary::after {
-  content: '−';
-  transform: rotate(180deg);
-}
+.faq-item[open] summary::after { content: '-'; }
 .faq-content {
   padding: 0 var(--space-lg) var(--space-lg);
   color: var(--color-text-secondary);
-  animation: slideDown .3s ease-out;
+  line-height: 1.6;
 }
+
+/* Comparison Table */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-xl);
+  font-size: 1.1rem;
+}
+.comparison-table th, .comparison-table td {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.comparison-table th {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+.comparison-table th:first-child, .comparison-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+}
+.comparison-table .col-us {
+  background: rgba(197, 0, 0, 0.1);
+  color: #fff;
+  font-weight: bold;
+  border-left: 2px solid var(--color-primary);
+  border-right: 2px solid var(--color-primary);
+}
+.comparison-table th.col-us {
+  background: var(--color-primary);
+  color: #fff;
+  border-top: 2px solid var(--color-primary);
+  border-radius: 8px 8px 0 0;
+}
+.comparison-table td.col-us {
+  color: var(--color-primary);
+}
+.comparison-table tr:last-child .col-us {
+  border-bottom: 2px solid var(--color-primary);
+  border-radius: 0 0 8px 8px;
+}
+.comparison-table .icon-check { color: var(--color-primary); font-size: 1.5rem; font-weight: bold; }
+.comparison-table .icon-cross { color: #555; font-size: 1.5rem; }
 
 /* ==========================================================================
    COMPONENTS — TICKER BAND
