@@ -19,7 +19,7 @@
   <nav class="nav">
     <div class="container">
       <a href="#" class="logo-text">
-        <img src="logo.jpg" alt="FightDijital Logo" class="mobile-logo" style="height: 120px; mix-blend-mode: lighten; margin: -30px 0;">
+        <img src="logo_transparent.png" alt="FightDijital Logo" class="mobile-logo" style="height: 120px; margin: -30px 0;">
       </a>
       <button class="mobile-menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Menüyü aç/kapat">☰</button>
       <ul class="nav-links" id="nav-links">
@@ -32,23 +32,7 @@
     </div>
   </nav>
 
-  <!-- Ticker Band -->
-  <div class="ticker-wrap">
-    <div class="ticker-track" id="ticker-track">
-      <span class="ticker-item">🥊 İstanbul'da salon sahipleri FightDijital ile büyüyor</span>
-      <span class="ticker-sep">✦</span>
-      <span class="ticker-item">💪 Ankara'da yeni kayıt rekoru kırıldı</span>
-      <span class="ticker-sep">✦</span>
-      <span class="ticker-item">🔥 İzmir'de rakipleri geride bırak</span>
-      <span class="ticker-sep">✦</span>
-      <span class="ticker-item">⚡ Türkiye'nin tek dövüş sporları odaklı dijital ajansı</span>
-      <span class="ticker-sep">✦</span>
-      <span class="ticker-item">🏆 İlk 48 saatte sonuç almaya başla</span>
-      <span class="ticker-sep">✦</span>
-      <span class="ticker-item">🎯 Bursa, Gaziantep, Antalya'da başarı hikayeleri devam ediyor</span>
-      <span class="ticker-sep">✦</span>
-    </div>
-  </div>
+
 
   <!-- Hero Section -->
   <section class="section-hero">
@@ -96,6 +80,10 @@
         <div style="display:flex; align-items:center; gap:8px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; text-transform: uppercase;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
           TikTok ADVERTISING
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; text-transform: uppercase;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+          Zapier
         </div>
       </div>
     </div>
@@ -495,6 +483,17 @@
     </div>
   </section>
 
+  <!-- Exclusivity Banner -->
+  <section class="section" style="padding: 48px 0; background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid rgba(197, 0, 0, 0.4);">
+    <div class="container" style="text-align: center;">
+      <div class="animate-on-scroll" style="display: inline-flex; flex-direction: column; align-items: center; border: 2px dashed rgba(197, 0, 0, 0.6); padding: var(--space-2xl); border-radius: var(--radius-lg); background: rgba(197, 0, 0, 0.05);">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" style="margin-bottom: 16px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <h2 style="color: var(--color-primary); font-size: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: 16px;">HER BÖLGEDEN SADECE 1 KULÜP İLE ÇALIŞIYORUZ.</h2>
+        <p style="max-width: 650px; margin: 0 auto; font-size: 1.1rem; color: #fff;">Aynı ilçedeki iki farklı salona hizmet verip kendi kendimizle rekabet etmiyoruz. Sizinle anlaştığımızda, bölgenizdeki rakibiniz bize gelse bile onu reddediyoruz. <br><strong style="color: var(--color-primary);">Yerinizi rakibinize kaptırmadan önce başvurun.</strong></p>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section id="iletisim" class="section" style="background: var(--color-bg); border-top: 1px solid var(--color-border);">
     <div class="container">
@@ -535,7 +534,7 @@
     <div class="container">
       <div style="display: flex; justify-content: center; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md); flex-wrap: wrap;">
         <a href="#" class="logo-text">
-          <img src="logo.png" alt="FightDijital Logo" class="mobile-footer-logo" style="height: 150px; mix-blend-mode: lighten; margin: -40px 0;">
+          <img src="logo_transparent.png" alt="FightDijital Logo" class="mobile-footer-logo" style="height: 150px; margin: -40px 0;">
         </a>
         <a href="https://www.instagram.com/fightdijital/" target="_blank" style="display:inline-flex; align-items:center; gap:8px; color: var(--color-primary); font-weight: 700; font-family: var(--font-display); letter-spacing:.05em;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
