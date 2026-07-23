@@ -699,6 +699,18 @@ img { max-width: 100%; height: auto; display: block; }
     text-align: center;
   }
 
+  /* --- Comparison Table Mobile --- */
+  .comparison-table th, .comparison-table td {
+    padding: 12px 8px !important;
+    font-size: 0.9rem !important;
+  }
+  .comparison-table th {
+    font-size: 0.95rem !important;
+  }
+  .comparison-table .icon-check, .comparison-table .icon-cross {
+    font-size: 1.2rem !important;
+  }
+
   /* --- Stats row: tighten gap --- */
   .hero-stats-row {
     gap: 32px !important;
